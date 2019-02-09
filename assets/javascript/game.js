@@ -1,3 +1,6 @@
+
+
+
 $(document).ready (function(){
 
 
@@ -5,61 +8,79 @@ var win = 0;
 var loss = 0;
 var randomNumber;
 var score;
-hasFinished = true;
-
 
 function startGame(){
     randomNumber = Math.floor((Math.random() * 102) + 19);
     console.log('DEBUG random Number --- ' + randomNumber);
     $("#randomNum").html(randomNumber);
-    win = 0;
-    console.log('DEBUG win --- ' + win);
-    $('#wins').append(win);
-    loss = 0;
-    $('#loss').append(loss);
-    console.log('DEBUG loss --- ' + loss);
     score = 0;
-    $('#score').append(score);
+    $('#score').text(score);
 }
 
-startGame();
-/*
-function generateImageRandomNum(){
-    var imgRandNum1 = math.floor(math.ramdom) *12 ;
-    var imgRandNum2 = math.floor(math.ramdom)* 12;
-    var imgRandNum3 = math.floor(math.ramdom) *12 ;
-    var imgRandNum4 = math.floor(math.ramdom)*12 ;
-    $('#imageID1') = imgRandNum1;
-    $('#imageID2') = imgRandNum2;
-    $('#imageID3') = imgRandNum3;
-    $('#imageID4') = imgRandNum4;
+// startGame();
+
+var imgRandomNumber1 = Math.floor((Math.random() *12));
+var imgRandomNumber2 = Math.floor((Math.random() *12));
+var imgRandomNumber3 = Math.floor((Math.random() *12));
+var imgRandomNumber4 = Math.floor((Math.random() *12));
+
+function scores(){
+   
+    startGame();
+    $(".img1").on("click", function(){
+       
+        score+= imgRandomNumber1;
+        console.log('DEBUG score ' + score);
+        $('#score').text(score);
+        checkWinLoss();
+        
+    });
+
+    $(".img2").on("click", function(){
+       
+         score+= imgRandomNumber2;
+         console.log('DEBUG score ' + score);
+         $('#score').text(score);
+         checkWinLoss();
+    });
+
+    $(".img3").on("click", function(){
+        score+= imgRandomNumber3;
+        console.log('DEBUG score ' + score);   
+        $('#score').text(score);
+        checkWinLoss();
+        
+    });
+
+    $(".img4").on("click", function(){
+       score+= imgRandomNumber4;
+       console.log('DEBUG score ' + score);
+        $('#score').text(score);
+        checkWinLoss();
+        
+    });
+         
+    // $('#score').text(score);
+   
+
 }
-
-function addScore(){
-    generateImageRandomNum();
-
-    score += 
-
-
-}
-
-
-function win(){
-    if(our randomNum === score){
-        win++;
-        generateRandomNum();
-    }
-    else{
-        los++;
-    }
-}
- onclick event{
-
     
+scores();
 
+function checkWinLoss(){
+    if(score === randomNumber){
+        win++;
+        $('#wins').text(win);
+        console.log('DEBUG win -- ' + win);
+        startGame();
+    }
+    else if (score > randomNumber){
+        loss++;
+        $('#loss').text(loss);
+        console.log('DEBUG loss -- ' + loss );
+        startGame();
+    }
 }
 
 
-
-*/
 });
