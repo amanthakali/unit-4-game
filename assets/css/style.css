@@ -2,12 +2,15 @@ img{
     padding:20px; 
     border: 2px solid black;
 }
+
 .images{
     padding: 10px;
 }
+
+
 h1{
-color: brown;
-font-family: monospace;
+    color: brown;
+    font-family: monospace;
 }
 .lead{
     color: #3cb371;
@@ -19,8 +22,66 @@ font-family: monospace;
 #randomNum{
     font-size: 30px;
     font-weight: bold;
+    color: red;
 }
 
 .box1{
     display: inline-block;
+}
+
+.randomWord{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.loss-win{
+  
+    border-bottom: 2px solid black;
+}
+
+.win{
+   color: green;
+}
+
+#wins{
+    color: green;
+}
+
+.loss{
+    color: red;
+}
+
+#loss{
+    color: red;
+}
+
+.imageBorder{
+    
+    border-bottom: 2px solid black;
+}
+
+.scoreBorder{
+   padding: 20px;
+   font-size: 30px;
+   font-weight: 700;
+   color: green;
+}
+
+.containerBorder{
+    border: 2px solid black;
+}
+
+.rulesBorder{
+    border: 2px solid black;  
+}
+
+
+.rules-hints{
+    background-color: #00BFFF;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+ul{
+    list-style-type: none;
 }

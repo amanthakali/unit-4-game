@@ -7,24 +7,26 @@ $(document).ready (function(){
 var win = 0;
 var loss = 0;
 var randomNumber;
+var imgRandomNumber1;
+var imgRandomNumber2;
+var imgRandomNumber3;
+var imgRandomNumber4;
 var score;
 
 function startGame(){
     randomNumber = Math.floor((Math.random() * 102) + 19);
+    imgRandomNumber1 = Math.floor((Math.random() *12)+1);
+    imgRandomNumber2 = Math.floor((Math.random() *12)+1);
+    imgRandomNumber3= Math.floor((Math.random() *12)+1);
+    imgRandomNumber4 = Math.floor((Math.random() *12)+1);
     console.log('DEBUG random Number --- ' + randomNumber);
     $("#randomNum").html(randomNumber);
     score = 0;
     $('#score').text(score);
 }
 
-// startGame();
 
-var imgRandomNumber1 = Math.floor((Math.random() *12));
-var imgRandomNumber2 = Math.floor((Math.random() *12));
-var imgRandomNumber3 = Math.floor((Math.random() *12));
-var imgRandomNumber4 = Math.floor((Math.random() *12));
-
-function scores(){
+function compute(){
    
     startGame();
     $(".img1").on("click", function(){
@@ -60,12 +62,9 @@ function scores(){
         
     });
          
-    // $('#score').text(score);
-   
-
 }
     
-scores();
+
 
 function checkWinLoss(){
     if(score === randomNumber){
@@ -81,6 +80,8 @@ function checkWinLoss(){
         startGame();
     }
 }
+
+compute();
 
 
 });
